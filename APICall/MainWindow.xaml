@@ -1,0 +1,59 @@
+﻿<Window x:Class="APICall.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recipe Search and Details" Height="600" Width="1000" MinWidth="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="My Recipes" Click="MyRecipesButton_Click" Width="100" Height="25" Margin="0,0,10,0"/>
+                <TextBox x:Name="QueryTextBox" Width="200" Height="25"/>
+            </StackPanel>
+            <Button Content="Search" Click="FetchDataButton_Click" Height="25" Margin="0,0,0,10"/>
+            <ListBox x:Name="DataListBox" Height="450" SelectionChanged="DataListBox_SelectionChanged"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Margin="10">
+                <TextBlock x:Name="RecipeTitleTextBlock" FontWeight="Bold" Margin="0,0,0,10"/>
+                <Image x:Name="RecipeImage" Height="200" Stretch="Uniform" Margin="0,0,0,10"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="10,0,5,10">
+                    <TextBlock Text="Zutaten:" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <ScrollViewer Height="250">
+                        <TextBlock x:Name="IngredientsTextBlock" TextWrapping="Wrap"/>
+                    </ScrollViewer>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,10,10">
+                    <TextBlock Text="Anweisungen:" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <ScrollViewer Height="250">
+                        <TextBlock x:Name="RecipeInstructionsTextBlock" TextWrapping="Wrap"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Button x:Name="AddToListButton" Content="Add to My Recipes" Click="AddToListButton_Click" Width="120" Height="25" Margin="0,0,10,0"/>
+                <Button x:Name="RemoveFromListButton" Content="Remove from My Recipes" Click="RemoveFromListButton_Click" Width="160" Height="25" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "eTzk7WGkG8NaRcYONqU+npJBgosHM+/mZQqUzHCCB6Pd7vVlZBijl9gjGsH9qXGUFygoic7I5fQSUmrJQbyYUQ==",
+  "success": true,
+  "projectFilePath": "C:\\SZF_CSharp\\APICall\\APICall.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tfeye\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
